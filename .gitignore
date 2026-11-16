@@ -7,3 +7,9 @@ a.out
 # editor / OS files
 .vscode/
 .DS_Store
+
+# Local tool and editor state
+.claude/
+.graphify/
+graphify-out/
+.tools/

@@ -43,12 +43,18 @@ int main()
 void addExpense()
 {
     FILE *file = fopen("expenses.txt", "a");
+    if (file == NULL)
+    {
+        printf("Could not open expenses.txt
+");
+        return;
+    }
     char name[100], date[11];
     float amount;
     printf("Enter Expense Name: ");
-    scanf("%s", name);
+    scanf("%99s", name);
     printf("Enter Date: ");
-    scanf("%s", date);
+    scanf("%10s", date);
     printf("Enter Amount ");
     scanf("%f", &amount);
     fprintf(file, "%s %s %.2f\n", name, date, amount);
@@ -59,11 +65,17 @@ void addExpense()
 void viewExpenses()
 {
     FILE *file = fopen("expenses.txt", "r");
+    if (file == NULL)
+    {
+        printf("Total Expenses: 0.00
+");
+        return;
+    }
     char name[100], date[11];
     float amount, total = 0.0;
     int c = 1;
     printf("Expense List: ");
-    while (fscanf(file, "%s %s %f", name, date, &amount) == 3)
+    while (fscanf(file, "%99s %10s %f", name, date, &amount) == 3)
     {
         printf("%d. Name: %s, Date: %s, Amount: %.2f", c, name, date, amount);
         total = total + amount;
@@ -77,6 +89,7 @@ void viewExpenses()
 void resetExpenses()
 {
     FILE *file = fopen("expenses.txt", "w");
-    fclose(file);
+    if (file != NULL)
+        fclose(file);
     printf("Expense list has been reset.\n");
 }

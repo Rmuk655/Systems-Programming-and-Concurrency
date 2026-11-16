@@ -14,6 +14,13 @@ int main(void)
         sprintf(urlout, "solution/output_%d.txt", i);
         FILE *input = fopen(urlin, "r");
         FILE *output1 = fopen(urlout, "w");
+        if (input == NULL || output1 == NULL)
+        {
+            fprintf(stderr, "Cannot open %s or %s\n", urlin, urlout);
+            if (input != NULL) fclose(input);
+            if (output1 != NULL) fclose(output1);
+            continue;
+        }
         fclose(output1);
         int T;
         fscanf(input, "%d", &T);

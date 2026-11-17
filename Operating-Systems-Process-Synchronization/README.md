@@ -47,6 +47,16 @@ This README describes Assignment 2 (producer-consumer).
 
 ---
 
+## Setup
+
+Ubuntu or WSL with `sudo`; the only requirement is `gcc` (System V shared memory and semaphores are part of glibc).
+
+```bash
+bash setup.sh      # installs build-essential and builds Assignment 1 (main) and Assignment 2 (ass2)
+```
+
+Then run as shown below, e.g. `cd Assignment_2/Krishnan_Ramanarayanan_CS24BTECH11036 && ./ass2 5`.
+
 ## Compilation & Execution
 
 Compile using GCC:

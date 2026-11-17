@@ -45,8 +45,7 @@ void addExpense()
     FILE *file = fopen("expenses.txt", "a");
     if (file == NULL)
     {
-        printf("Could not open expenses.txt
-");
+        printf("Could not open expenses.txt\n");
         return;
     }
     char name[100], date[11];
@@ -67,8 +66,7 @@ void viewExpenses()
     FILE *file = fopen("expenses.txt", "r");
     if (file == NULL)
     {
-        printf("Total Expenses: 0.00
-");
+        printf("Total Expenses: 0.00\n");
         return;
     }
     char name[100], date[11];

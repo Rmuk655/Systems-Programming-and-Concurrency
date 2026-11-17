@@ -30,6 +30,14 @@ A string matching and ranking implementation involving:
 ### Operating-systems process synchronization
 See [Operating-Systems-Process-Synchronization](Operating-Systems-Process-Synchronization/) for the OS synchronization exercises.
 
+## Setup
+
+Ubuntu or WSL with `sudo`; only `gcc` is needed.
+
+```bash
+bash setup.sh      # installs build-essential, then compiles and checks all three projects against their sample cases
+```
+
 ## Running the tests
 
 The project directories include `compile_run.sh` scripts that compile programs and check sample cases:
